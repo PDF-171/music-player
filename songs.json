@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Wamoyo Wangu",
+    "artist": "Khris",
+    "album": "Wamoyo",
+    "genre": "Afro Soul / R&B",
+    "year": 2024,
+    "cover": "assets/images/covers/wamoyo-wangu.jpg",
+    "audio": "assets/music/wamoyo-wangu.mp3",
+    "lyrics": "lyrics/wamoyo-wangu.lrc",
+    "duration": "4:21"
+  },
+  {
+    "id": 2,
+    "title": "Sunset",
+    "artist": "Khris",
+    "album": "Sunset Diaries",
+    "genre": "Afro Soul / R&B",
+    "year": 2024,
+    "cover": "assets/images/covers/sunset.jpg",
+    "audio": "assets/music/sunset.mp3",
+    "lyrics": "lyrics/sunset.lrc",
+    "duration": "3:45"
+  },
+  {
+    "id": 3,
+    "title": "My Everything",
+    "artist": "Khris",
+    "album": "My Everything",
+    "genre": "Afro Soul / R&B",
+    "year": 2023,
+    "cover": "assets/images/covers/my-everything.jpg",
+    "audio": "assets/music/my-everything.mp3",
+    "lyrics": "lyrics/my-everything.lrc",
+    "duration": "3:50"
+  },
+  {
+    "id": 4,
+    "title": "Dream With Me",
+    "artist": "Khris",
+    "album": "Dreamscape",
+    "genre": "Afro Soul / R&B",
+    "year": 2023,
+    "cover": "assets/images/covers/dream-with-me.jpg",
+    "audio": "assets/music/dream-with-me.mp3",
+    "lyrics": "lyrics/dream-with-me.lrc",
+    "duration": "4:02"
+  },
+  {
+    "id": 5,
+    "title": "Forever Love",
+    "artist": "Khris",
+    "album": "Timeless",
+    "genre": "Afro Soul / R&B",
+    "year": 2022,
+    "cover": "assets/images/covers/forever-love.jpg",
+    "audio": "assets/music/forever-love.mp3",
+    "lyrics": "lyrics/forever-love.lrc",
+    "duration": "4:18"
+  },
+  {
+    "id": 6,
+    "title": "You & I",
+    "artist": "Khris",
+    "album": "You & I",
+    "genre": "Afro Soul / R&B",
+    "year": 2022,
+    "cover": "assets/images/covers/you-and-i.jpg",
+    "audio": "assets/music/you-and-i.mp3",
+    "lyrics": "lyrics/you-and-i.lrc",
+    "duration": "3:33"
+  }
+]

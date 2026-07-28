@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wamoyo Music — Stream your sound</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M2 13h3l2-8 3 16 3-11 2 6h9" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="g" x1="0" y1="0" x2="26" y2="26"><stop stop-color="#ff5470"/><stop offset="1" stop-color="#ff8a5c"/></linearGradient></defs>
+        </svg>
+      </span>
+      <span class="brand-text">WAMOYO<br><small>MUSIC</small></span>
+    </div>
+
+    <div class="search-wrap">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="text" id="searchInput" placeholder="Search for songs, artists, albums...">
+    </div>
+
+    <div class="topbar-right">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+        <svg id="themeIcon" width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="user-chip">
+        <span class="avatar">K</span>
+        <span class="username">Khris</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <div class="body-wrap">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <nav class="nav-list">
+        <button class="nav-item active" data-view="home">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 11.5L12 4l9 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1v-9" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          Home
+        </button>
+        <button class="nav-item" data-view="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Search
+        </button>
+        <button class="nav-item" data-view="library">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="4" height="16" rx="1" stroke="currentColor" stroke-width="2"/><rect x="10" y="4" width="4" height="16" rx="1" stroke="currentColor" stroke-width="2"/><path d="M18 4l3 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Your Library
+        </button>
+        <button class="nav-item" data-view="albums">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="2"/></svg>
+          Albums
+        </button>
+        <button class="nav-item" data-view="artists">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M5 20c0-3.9 3.1-6 7-6s7 2.1 7 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Artists
+        </button>
+        <button class="nav-item" data-view="playlists-view">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h13M4 12h13M4 18h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="17" r="2.4" stroke="currentColor" stroke-width="2"/><path d="M20 12v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Playlists
+        </button>
+        <button class="nav-item" data-view="liked">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.4-9.4-8.8C1.2 8 2.6 5 6 4.6c2-.2 3.6.9 4.6 2.6C11.6 5.5 13.2 4.4 15.2 4.6c3.4.4 4.8 3.4 3.4 6.6C16.2 15.6 12 20 12 20z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          Liked Songs
+        </button>
+      </nav>
+
+      <div class="playlists-section">
+        <div class="playlists-head">
+          <span>PLAYLISTS</span>
+          <button class="add-playlist-btn" id="addPlaylistBtn" title="New playlist" aria-label="New playlist">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="playlist-list" id="playlistList"></div>
+      </div>
+
+      <button class="new-playlist-full" id="newPlaylistFull">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        New Playlist
+      </button>
+    </aside>
+
+    <!-- MAIN COLUMN -->
+    <main class="main-col">
+      <div class="now-playing-card">
+        <div class="cover-wrap">
+          <img id="npCover" src="assets/images/covers/wamoyo-wangu.jpg" alt="">
+        </div>
+        <div class="np-info">
+          <span class="np-eyebrow">Now Playing</span>
+          <h1 id="npTitle">Wamoyo Wangu</h1>
+          <p class="np-artist" id="npArtist">Khris</p>
+          <p class="np-meta"><span id="npDuration">4:21</span> · <span id="npYear">2024</span> · <span id="npGenre">Afro Soul / R&B</span></p>
+          <div class="np-controls">
+            <button class="play-pill" id="mainPlayBtn">
+              <svg id="mainPlayIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <span id="mainPlayLabel">Play</span>
+            </button>
+            <button class="circle-btn" id="likeBtn" aria-label="Like song">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.4-9.4-8.8C1.2 8 2.6 5 6 4.6c2-.2 3.6.9 4.6 2.6C11.6 5.5 13.2 4.4 15.2 4.6c3.4.4 4.8 3.4 3.4 6.6C16.2 15.6 12 20 12 20z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="circle-btn" id="moreBtn" aria-label="More options">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section class="all-songs">
+        <div class="all-songs-head">
+          <h2>All Songs</h2>
+          <button class="sort-btn">Recently added
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="song-table">
+          <div class="song-row song-row--head">
+            <span class="col-idx">#</span>
+            <span class="col-title">Title</span>
+            <span class="col-album">Album</span>
+            <svg class="col-clock" width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div id="songList"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- RIGHT PANEL -->
+    <aside class="right-panel">
+      <div class="panel-tabs">
+        <button class="panel-tab active" data-tab="lyrics">Lyrics</button>
+        <button class="panel-tab" data-tab="details">Details</button>
+        <button class="panel-expand" id="panelExpand" aria-label="Expand">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 21h6v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <div class="panel-body" id="lyricsPanel">
+        <div class="lyrics-scroll" id="lyricsScroll">
+          <p class="lyrics-empty">Lyrics will appear here once a song is playing.</p>
+        </div>
+      </div>
+
+      <div class="panel-body panel-body--hidden" id="detailsPanel">
+        <dl class="details-list" id="detailsList"></dl>
+      </div>
+    </aside>
+  </div>
+
+  <!-- BOTTOM PLAYER BAR -->
+  <footer class="player-bar">
+    <div class="pb-left">
+      <img id="pbCover" src="assets/images/covers/wamoyo-wangu.jpg" alt="" class="pb-cover">
+      <div class="pb-meta">
+        <span class="pb-title" id="pbTitle">Wamoyo Wangu</span>
+        <span class="pb-artist" id="pbArtist">Khris</span>
+      </div>
+      <button class="pb-like" id="pbLikeBtn" aria-label="Like song">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.4-9.4-8.8C1.2 8 2.6 5 6 4.6c2-.2 3.6.9 4.6 2.6C11.6 5.5 13.2 4.4 15.2 4.6c3.4.4 4.8 3.4 3.4 6.6C16.2 15.6 12 20 12 20z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="pb-center">
+      <div class="pb-buttons">
+        <button class="pb-btn" id="shuffleBtn" aria-label="Shuffle">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 6h3.5c1.6 0 3 .9 3.8 2.3M4 18h3.5c1.6 0 3-.9 3.8-2.3M15 6h5v0M15 18h5v0M17 4l3 2-3 2M17 20l3-2-3-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="pb-btn" id="prevBtn" aria-label="Previous">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zM20 6L9 12l11 6z"/></svg>
+        </button>
+        <button class="pb-btn pb-btn--play" id="pbPlayBtn" aria-label="Play/Pause">
+          <svg id="pbPlayIcon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button class="pb-btn" id="nextBtn" aria-label="Next">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M18 6h-2v12h2zM4 6l11 6-11 6z"/></svg>
+        </button>
+        <button class="pb-btn" id="repeatBtn" aria-label="Repeat">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 7h13a3 3 0 013 3v1M20 17H7a3 3 0 01-3-3v-1M8 4L4.5 7 8 10M16 20l3.5-3-3.5-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="pb-progress-row">
+        <span class="pb-time" id="pbCurrentTime">0:00</span>
+        <input type="range" id="seekBar" class="seek-bar" min="0" max="100" value="0" step="0.1">
+        <span class="pb-time" id="pbDuration">0:00</span>
+      </div>
+    </div>
+
+    <div class="pb-right">
+      <button class="pb-icon" id="queueLyricsBtn" aria-label="Lyrics">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 4H4v13l3-2h13z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="pb-icon" id="muteBtn" aria-label="Mute">
+        <svg id="volIcon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 9v6h4l5 4V5L8 9H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 9a4.2 4.2 0 010 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <input type="range" id="volumeBar" class="volume-bar" min="0" max="100" value="80">
+      <button class="pb-icon" id="queueBtn" aria-label="Queue">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 6h11M4 12h11M4 18h7M18 9v9M14.5 15.5L18 19l3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </footer>
+</div>
+
+<audio id="audioEl" preload="metadata"></audio>
+
+<script src="js/app.js"></script>
+</body>
+</html>
